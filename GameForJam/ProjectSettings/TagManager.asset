@@ -4,7 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - earth
+=======
+  - Lever
+>>>>>>> 7d10d5e8c4627786bcc3b65d1a94bb173bc38e74
   layers:
   - Default
   - TransparentFX
@@ -37,7 +41,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Action Group
   m_SortingLayers:
   - name: Default
     uniqueID: 0
