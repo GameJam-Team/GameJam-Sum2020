@@ -15,11 +15,11 @@ GameObject:
   - component: {fileID: 25399109377681994}
   - component: {fileID: 25399109377681992}
   - component: {fileID: 25399109377681995}
-  - component: {fileID: 25399109377681997}
   - component: {fileID: 25399109377681993}
+  - component: {fileID: 8964564081996152730}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 25399109377682000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.324, y: -2.77, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4879, y: 1.2381, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.38709676, y: 1}
+  m_Size: {x: 0.45, y: 1.12}
   m_Direction: 0
 --- !u!50 &25399109377682001
 Rigidbody2D:
@@ -121,9 +121,9 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 9.8
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &25399109377681994
 MonoBehaviour:
@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 323056cbcd591b84db3f6de156b564a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 200
+  immortal: 0
+  _health: 5555555
 --- !u!198 &25399109377681992
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -4860,20 +4861,6 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &25399109377681997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 25399109377682000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3789a7642506ae4428d7d5125282b549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpForce: 20
-  MoveSpeed: 9
 --- !u!114 &25399109377681993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4886,7 +4873,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c668c6cfac6682c41b987236fdd42306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shft_distanse: 15
+  shft_distanse: 7
   cd_shft_time: 2
-  speed: 5
-  jmp_speed: 30
+  speed: 6
+  jmp_speed: 50
+--- !u!61 &8964564081996152730
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25399109377682000}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0039227903, y: -0.51235104}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.38709676, y: 1}
+    newSize: {x: 0.38709676, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.28355443, y: 0.12426692}
+  m_EdgeRadius: 0

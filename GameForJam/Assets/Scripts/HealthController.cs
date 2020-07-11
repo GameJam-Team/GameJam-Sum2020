@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
+   public bool immortal;
     [SerializeField] private uint _health;
     private ParticleSystem _particleSystem;
     private void Awake()
     {
+        immortal = false;
         _particleSystem = GetComponent<ParticleSystem>();
     }
     public void increaseHealth(uint value)
@@ -16,11 +18,15 @@ public class HealthController : MonoBehaviour
     }
     public void decreaseHealth(uint value)
     {
-        _health -= (value > _health)? _health : value;
-        if (!_particleSystem.isEmitting) _particleSystem.Play();
-        if (_health == 0)
+        if (!immortal)
         {
-            Destroy(gameObject);
+            _health -= (value > _health) ? _health : value;
+            if (!_particleSystem.isEmitting) _particleSystem.Play();
+            if (_health == 0)
+            {
+                Destroy(gameObject);
+            }
         }
+        
     }
 }
