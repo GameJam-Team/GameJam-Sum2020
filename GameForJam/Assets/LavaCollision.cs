@@ -12,7 +12,8 @@ public class LavaCollision : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        _damageable.decreaseHealth(_damage);
+        if (_damageable != null)
+            _damageable.decreaseHealth(_damage);
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

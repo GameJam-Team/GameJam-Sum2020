@@ -63,14 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Fire.cs" />
     <Compile Include="Assets\LavaCollision.cs" />
-    <Compile Include="Assets\PressButton.cs" />
     <Compile Include="Assets\Scripts\HealthController.cs" />
-    <Compile Include="Assets\Scripts\Objects\InteractiveObject.cs" />
-    <Compile Include="Assets\Scripts\Old (unused)\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\SmoothCameraFollow.cs" />
-    <Compile Include="Assets\Scripts\SpikesCollision.cs" />
     <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\cam_control.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />
