@@ -15,6 +15,7 @@ public class move_control : MonoBehaviour
     private Transform _selfTransform;
     private SpriteRenderer SelfSprite;
     private readonly Stack<float> coefs = new Stack<float>();
+    private HealthController HP;
     private void Awake()
     {
         _selfBody = GetComponent<Rigidbody2D>();
@@ -24,6 +25,7 @@ public class move_control : MonoBehaviour
         SelfSprite = GetComponent<SpriteRenderer>();
         coefs.Push(1);
         height = gameObject.GetComponent<CapsuleCollider2D>();
+        HP = this.GetComponent<HealthController>();
     }
     void Update()
     {
@@ -70,6 +72,8 @@ public class move_control : MonoBehaviour
             enviroment_speed_coef = 15;
             //y= x = 1* Mathf.Sign(x);
             shft_cd = cd_shft_time;
+            HP.immortal = true;
+            
             //this.GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed * x * enviroment_speed_coef, ForceMode2D.Impulse);
         }
 
@@ -79,12 +83,19 @@ public class move_control : MonoBehaviour
             if (Vector3.Distance(shift, _selfTransform.position) > shft_distanse)
             {
                 shift_act = false;
-                enviroment_speed_coef = coefs.Pop();    
+                
+                enviroment_speed_coef = coefs.Pop();
             }
         }
 
         if (shft_cd > 0)
+        {
             shft_cd -= Time.deltaTime;
+            if (shft_cd >= 1.6 && !shift_act)
+                x = 0;
+            else if (shft_cd<1.6) HP.immortal = false;
+
+        }
         //direction = new Vector3(x, 0, 0);
        // if (!shift_act)
         _selfBody.velocity = new Vector2(x * speed * enviroment_speed_coef, _selfBody.velocity.y);           
@@ -95,6 +106,7 @@ public class move_control : MonoBehaviour
         {
             shift_act = false;
             enviroment_speed_coef = 1;
+            
         }
     }
    void OnTriggerEnter2D(Collider2D collision)
@@ -106,6 +118,6 @@ public class move_control : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("earth"))
             ground = false;
-        Debug.Log("Fff");
+       
     }
 }
