@@ -6,10 +6,10 @@ public class cam_control : MonoBehaviour
 {
     public float x, y, offset;
     private Vector2 direction;
-    private Camera _mainCamera;
+    public Camera _mainCamera;
     private void Awake()
     {
-        _mainCamera = Camera.main;
+       // _mainCamera = Camera.main;
     }
     private void FixedUpdate()
     {

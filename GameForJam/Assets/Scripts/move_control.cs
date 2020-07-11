@@ -6,11 +6,11 @@ public class move_control : MonoBehaviour
 {
     public  float shft_distanse = 13;
     public  float cd_shft_time = 2;
-    private float x, tall, enviroment_speed_coef = 1, shft_cd;
+    private float x,y, tall, enviroment_speed_coef = 1, shft_cd;
     public float speed, jmp_speed;
     private Vector3 shift;
     private CapsuleCollider2D height;
-    private bool down = false, jump = false, ground = true, shift_act = false;
+    private bool down = false, jump = false, ground = true, shift_act = false, swim_mode = false;
     private Rigidbody2D _selfBody;
     private Transform _selfTransform;
     private SpriteRenderer SelfSprite;
@@ -40,23 +40,32 @@ public class move_control : MonoBehaviour
             // ground = false;
             _selfBody.AddForce(Vector2.up * jmp_speed, ForceMode2D.Impulse);
         }
-
-        if ( ground&& !jump &&Input.GetKey(KeyCode.S) && !down)
+        if (!swim_mode)
         {
-            height.size = new Vector2(height.size.x, tall / 2f);
-            coefs.Push(enviroment_speed_coef);
-            enviroment_speed_coef = 0.35f;
-            down = true;
-        }
+            if (ground && !jump && Input.GetKey(KeyCode.S) && !down)
+            {
+                height.size = new Vector2(height.size.x, tall / 2f);
+                coefs.Push(enviroment_speed_coef);
+                enviroment_speed_coef = 0.35f;
+                down = true;
+            }
 
-        if ((Input.GetKeyUp(KeyCode.S) || !ground)&&down)
+            if ((Input.GetKeyUp(KeyCode.S) || !ground) && down)
+            {
+                height.size = new Vector2(height.size.x, tall);
+                // if (Input.GetKeyUp(KeyCode.S)&& ground)
+                enviroment_speed_coef = coefs.Pop();
+                down = false;
+            }
+        }
+        else if (down)
         {
             height.size = new Vector2(height.size.x, tall);
-           // if (Input.GetKeyUp(KeyCode.S)&& ground)
-                enviroment_speed_coef = coefs.Pop();
+           
             down = false;
         }
     }
+
 
     private void FixedUpdate()
     {
@@ -64,12 +73,12 @@ public class move_control : MonoBehaviour
         SelfSprite.flipX = Mathf.Sign(x) < 0;
         if (x > 0) x = 1f;
         if (x < 0) x = -1f;
-        if (Input.GetKey(KeyCode.LeftShift) && !shift_act&& Mathf.Abs( x)>0&& shft_cd<=0)
+        if (Input.GetKey(KeyCode.LeftShift) && !shift_act && Mathf.Abs(x) > 0 && shft_cd <= 0 && HP.discreaseEnergy(5)) 
         {
             shift = _selfTransform.position;
             shift_act = true;
             coefs.Push(enviroment_speed_coef);
-            enviroment_speed_coef = 15;
+            enviroment_speed_coef = 7;
             //y= x = 1* Mathf.Sign(x);
             shft_cd = cd_shft_time;
             HP.immortal = true;
@@ -97,8 +106,21 @@ public class move_control : MonoBehaviour
 
         }
         //direction = new Vector3(x, 0, 0);
-       // if (!shift_act)
-        _selfBody.velocity = new Vector2(x * speed * enviroment_speed_coef, _selfBody.velocity.y);           
+        // if (!shift_act)
+        if (swim_mode)
+        {
+
+            y = Input.GetAxis("Vertical");
+            if ( (x != 0 || y != 0)&&HP.discreaseEnergy(0.1f))
+                _selfBody.velocity = new Vector2(_selfBody.velocity.x, y * speed * enviroment_speed_coef);
+            else if (x == 0 && y == 0)
+                HP.increaseEnergy();
+            else x = 0;
+        }
+        else HP.increaseEnergy();
+      
+        _selfBody.velocity = new Vector2(x * speed * enviroment_speed_coef, _selfBody.velocity.y);
+        
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -108,16 +130,29 @@ public class move_control : MonoBehaviour
             enviroment_speed_coef = 1;
             
         }
+        
     }
    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("earth"))
          ground = true;
+        if (collision.gameObject.CompareTag("water"))
+        {
+            coefs.Clear();
+            coefs.Push(1);
+            enviroment_speed_coef = 0.5f;
+            swim_mode = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("earth"))
             ground = false;
-       
+        if (collision.gameObject.CompareTag("water"))
+        {
+
+            enviroment_speed_coef = 1;
+            swim_mode = false;
+        }
     }
 }

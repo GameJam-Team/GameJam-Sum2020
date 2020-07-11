@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Old (unused)\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SmoothCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SpikesCollision.cs" />
+    <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\cam_control.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />
     <Reference Include="UnityEngine">
