@@ -63,12 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Cam_control.cs" />
-    <Compile Include="Assets\Scripts\Move_control.cs" />
     <Compile Include="Assets\Scripts\Objects\HealthController.cs" />
     <Compile Include="Assets\Scripts\Old (unused)\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SmoothCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SpikesCollision.cs" />
+    <Compile Include="Assets\Scripts\cam_control.cs" />
+    <Compile Include="Assets\Scripts\move_control.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -615,11 +615,20 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -627,23 +636,14 @@
     <Reference Include="Unity.Timeline">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
@@ -657,11 +657,20 @@
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Common.Editor">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
@@ -669,17 +678,8 @@
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>B:/GameDevJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

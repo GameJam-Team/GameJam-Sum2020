@@ -203,7 +203,6 @@ GameObject:
   - component: {fileID: 335495856}
   - component: {fileID: 335495855}
   - component: {fileID: 335495860}
-  - component: {fileID: 335495859}
   - component: {fileID: 335495862}
   - component: {fileID: 335495861}
   - component: {fileID: 335495863}
@@ -315,20 +314,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &335495859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335495854}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3789a7642506ae4428d7d5125282b549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpForce: 20
-  MoveSpeed: 9
 --- !u!114 &335495860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5091,7 +5076,6 @@ GameObject:
   - component: {fileID: 549035855}
   - component: {fileID: 549035854}
   - component: {fileID: 549035853}
-  - component: {fileID: 549035856}
   - component: {fileID: 549035857}
   m_Layer: 0
   m_Name: Main Camera
@@ -5165,21 +5149,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &549035856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549035852}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f2675bf7bb15a4696c5013a6fdd71c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  offset: 0.27
 --- !u!114 &549035857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5343,7 +5312,6 @@ GameObject:
   - component: {fileID: 1392109997}
   - component: {fileID: 1392109996}
   - component: {fileID: 1392109995}
-  - component: {fileID: 1392109998}
   - component: {fileID: 1392109999}
   m_Layer: 9
   m_Name: SpikesWall
@@ -5443,18 +5411,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1392109998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392109994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a7d56da8dcf2f45b56f50f57e84092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1392109999
 MonoBehaviour:
   m_ObjectHideFlags: 0

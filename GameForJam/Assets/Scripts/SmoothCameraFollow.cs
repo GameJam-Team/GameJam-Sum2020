@@ -9,10 +9,14 @@ public class SmoothCameraFollow : MonoBehaviour
     public float dampTime = 0.4f;
     private Vector3 cameraPos;
     private Vector3 velocity = Vector3.zero;
-
+    private Transform _camTransform;
+    private void Awake()
+    {
+        _camTransform = GetComponent<Transform>();
+    }
     void Update()
     {
         cameraPos = new Vector3(Player.position.x, Player.position.y, -10f);
-        transform.position = Vector3.SmoothDamp(gameObject.transform.position, cameraPos, ref velocity, dampTime);
+        _camTransform.position = Vector3.SmoothDamp(_camTransform.position, cameraPos, ref velocity, dampTime);
     }
 }

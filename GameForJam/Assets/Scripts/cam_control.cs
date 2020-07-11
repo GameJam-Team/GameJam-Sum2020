@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cam_control : MonoBehaviour
+public class cam_control : MonoBehaviour
 {
     public float x, y, offset;
     private Vector2 direction;

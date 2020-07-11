@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_control : MonoBehaviour
+public class move_control : MonoBehaviour
 {
     public  float shft_distanse = 13;
     public  float cd_shft_time = 2;
