@@ -12,11 +12,15 @@ public class Move_control : MonoBehaviour
     private CapsuleCollider2D height;
     private bool jump = false, ground = true, shift_act = false;
     private Rigidbody2D _selfBody;
+    private Transform _selfTransform;
+    private SpriteRenderer SelfSprite;
     private void Awake()
     {
         _selfBody = GetComponent<Rigidbody2D>();
         height = gameObject.GetComponent<CapsuleCollider2D>();
         tall = height.size.y;
+        _selfTransform = GetComponent<Transform>();
+        SelfSprite = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -31,7 +35,7 @@ public class Move_control : MonoBehaviour
             ground = false;
             _selfBody.AddForce(Vector2.up * jmp_speed, ForceMode2D.Impulse);
         }
-
+        
         if (Input.GetKeyDown(KeyCode.S) && !jump && ground)
         {
             height.size = new Vector2(height.size.x, tall / 1.75f);
@@ -49,20 +53,28 @@ public class Move_control : MonoBehaviour
     private void FixedUpdate()
     {
         x = Input.GetAxis("Horizontal");
+        if (Mathf.Sign(x) >= 0)
+        {
+            SelfSprite.flipX = false;
+        }
+        else
+        {
+            SelfSprite.flipX = true;
+        }
         
         if (Input.GetKey(KeyCode.LeftShift) && !shift_act&& Mathf.Abs( x)>0&& shft_cd<=0)
         {
-            shift = this.transform.position;
+            shift = _selfTransform.position;
             shift_act = true;
             enviroment_speed_coef = 10;
-            y= x = 1* Mathf.Sign(x);
+            y = x = 1* Mathf.Sign(x);
             shft_cd = cd_shft_time;
         }
 
         if (shift_act)
         {
             x = y;
-            if (Vector3.Distance(shift, this.transform.position) > shft_distanse)
+            if (Vector3.Distance(shift, _selfTransform.position) > shft_distanse)
             {
                 shift_act = false;
                 enviroment_speed_coef = 1;
@@ -73,9 +85,8 @@ public class Move_control : MonoBehaviour
             shft_cd -= Time.deltaTime;
             
         direction = new Vector3(x, 0, 0);
-        this.transform.position = this.transform.position + direction * speed* enviroment_speed_coef;             
+        _selfTransform.position += direction * speed * enviroment_speed_coef;             
     }
-               
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("earth"))
