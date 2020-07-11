@@ -14,7 +14,7 @@ public class move_control : MonoBehaviour
     private Rigidbody2D _selfBody;
     private Transform _selfTransform;
     private SpriteRenderer SelfSprite;
-    private Stack<float> coefs = new Stack<float>();
+    private readonly Stack<float> coefs = new Stack<float>();
     private void Awake()
     {
         _selfBody = GetComponent<Rigidbody2D>();
@@ -25,7 +25,6 @@ public class move_control : MonoBehaviour
         coefs.Push(1);
         height = gameObject.GetComponent<CapsuleCollider2D>();
     }
-    // phis -> _selfBody
     void Update()
     {
         /*if (jump && ground && Input.GetAxis("Vertical") <= 0)
@@ -88,12 +87,11 @@ public class move_control : MonoBehaviour
             shft_cd -= Time.deltaTime;
         //direction = new Vector3(x, 0, 0);
        // if (!shift_act)
-        _selfBody.velocity = new Vector2(x * speed * enviroment_speed_coef, phis.velocity.y);           
+        _selfBody.velocity = new Vector2(x * speed * enviroment_speed_coef, _selfBody.velocity.y);           
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-       
-        if ((collision.gameObject.tag == "Wall"|| collision.gameObject.tag == "earth") && shift_act)
+        if ((collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("earth")) && shift_act)
         {
             shift_act = false;
             enviroment_speed_coef = 1;
@@ -101,12 +99,12 @@ public class move_control : MonoBehaviour
     }
    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "earth")
+        if (collision.gameObject.CompareTag("earth"))
          ground = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "earth")
+        if (collision.gameObject.CompareTag("earth"))
             ground = false;
         Debug.Log("Fff");
     }

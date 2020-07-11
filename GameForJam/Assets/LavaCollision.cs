@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LavaCollision : MonoBehaviour
 {
-    [SerializeField] private uint _damage;
+    [SerializeField] private uint _damage = 20;
     private HealthController _damageable;
     private void OnTriggerEnter2D(Collider2D collision)
     {

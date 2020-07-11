@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D SelfBody;
-    [SerializeField][Range(1,100)] private float JumpForce, MoveSpeed;
+    [SerializeField][Range(1,100)] private float JumpForce = 0, MoveSpeed = 0;
     private SpriteRenderer SelfSprite;
 
     private void Awake()

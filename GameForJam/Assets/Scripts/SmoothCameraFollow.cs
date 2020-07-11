@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SmoothCameraFollow : MonoBehaviour
 {
-
     public Transform Player;
     public float dampTime = 0.4f;
     private Vector3 cameraPos;
@@ -16,7 +15,10 @@ public class SmoothCameraFollow : MonoBehaviour
     }
     void Update()
     {
-        cameraPos = new Vector3(Player.position.x, Player.position.y, -10f);
-        _camTransform.position = Vector3.SmoothDamp(_camTransform.position, cameraPos, ref velocity, dampTime);
+        if (Player != null)
+        {
+            cameraPos = new Vector3(Player.position.x, Player.position.y, -10f);
+            _camTransform.position = Vector3.SmoothDamp(_camTransform.position, cameraPos, ref velocity, dampTime);
+        }
     }
 }
