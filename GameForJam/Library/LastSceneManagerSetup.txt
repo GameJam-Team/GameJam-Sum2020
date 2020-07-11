@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Timur.unity
+- path: "Assets/Scenes/\u0432\u0432\u0432.unity"
   isLoaded: 1
   isActive: 1
   isSubScene: 0
