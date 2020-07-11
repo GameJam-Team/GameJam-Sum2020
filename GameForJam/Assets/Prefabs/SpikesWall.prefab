@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5861285217475082399}
   - component: {fileID: 1692781042506207963}
   m_Layer: 9
-  m_Name: SpikesWall (1)
+  m_Name: SpikesWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1680545629
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7573331673453511767, guid: 8778ac59d465b7242a162b5547177979,
     type: 3}

@@ -578,5 +578,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shft_distanse: 15
   cd_shft_time: 2
-  speed: 0.2
-  jmp_speed: 60
+  speed: 20
+  jmp_speed: 4000

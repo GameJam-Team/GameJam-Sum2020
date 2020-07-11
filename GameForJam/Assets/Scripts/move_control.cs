@@ -85,7 +85,7 @@ public class move_control : MonoBehaviour
             shft_cd -= Time.deltaTime;
             
         direction = new Vector3(x, 0, 0);
-        _selfTransform.position += direction * speed * enviroment_speed_coef;             
+        _selfTransform.position += direction * speed * enviroment_speed_coef * Time.deltaTime;             
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
