@@ -58,33 +58,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
- <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\Scripts\Animation Scripts\Lever.cs" />
+     <Compile Include="Assets\test_lever.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.RenderPipelines.Universal.Shaders">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
  </Reference>
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.RenderPipelines.Core.Editor">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.RenderPipelines.Core.Runtime">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.RenderPipelines.Universal.Runtime">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Unity.RenderPipelines.Universal.Editor">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -98,6 +81,30 @@
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Runtime">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Editor">
+ <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
  </Reference>
@@ -106,12 +113,6 @@
  </Reference>
  <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
  <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>C:/codes/GameJam/GameJam-Sum2020/GameForJam/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/programs/Unity ins/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
