@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpikesCollision : MonoBehaviour
 {
-    [SerializeField] private uint _damage = 2;
+    [SerializeField] private uint _damage = 20;
     private HealthController _damageable;
     private void OnCollisionEnter2D(Collision2D collision)
     {

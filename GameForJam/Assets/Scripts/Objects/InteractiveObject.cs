@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractiveObject : MonoBehaviour
+public abstract class InteractiveObject : MonoBehaviour
 {
-    public void ButtonInteraction()
-    {
-        Debug.Log("pipiska2");
-    }
+    public abstract void ButtonInteraction();
+    public abstract void ArmInteraction();
 }
