@@ -212,6 +212,11 @@ MonoBehaviour:
   cd_shft_time: 2
   speed: 6
   jmp_speed: 50
+  down: 0
+  jump: 0
+  ground: 1
+  shift_act: 0
+  swim_mode: 0
 --- !u!61 &5146444918455467170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -251,9 +256,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   immortal: 0
-  _health: 5555555
+  Health: 100
+  MaxHealth: 100
   _oxigen: 100
   _energy: 100
+  resurrectable: 0
+  HealthSlider: {fileID: 0}
+  MainScene: {fileID: 0}
 --- !u!198 &1791210079782945979
 ParticleSystem:
   m_ObjectHideFlags: 0
