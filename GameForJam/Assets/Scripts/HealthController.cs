@@ -5,29 +5,35 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
-   public bool immortal;
-    [SerializeField] private uint _health = 555, _maxHealth = 555;
-        public float _oxigen, _energy;
-    [SerializeField] private Slider _healthSlider;
+    public bool immortal;
+    public uint Health = 555, MaxHealth = 555;
+    public float _oxigen, _energy;
+    public bool resurrectable = false;
+    public Slider HealthSlider;
+    public GameState MainScene;
 
     private ParticleSystem _particleSystem;
     private void Awake()
     {
         immortal = false;
-        _healthSlider.value = 100;
+        HealthSlider.value = 100;
         _particleSystem = GetComponent<ParticleSystem>();
     }
     public void decreaseHealth(uint value)
     {
         if (!immortal)
         {
-            _health -= (value > _health) ? _health : value;
-            _healthSlider.value = (float)_health / _maxHealth * 100;
+            Health -= (value > Health) ? Health : value;
+            HealthSlider.value = (float)Health / MaxHealth * 100;
             if (!_particleSystem.isEmitting) _particleSystem.Play();
-            if (_health == 0)
+            if (Health == 0)
             {
-                _healthSlider.transform.GetChild(1).gameObject.SetActive(false);
-                Destroy(gameObject);
+                HealthSlider.transform.GetChild(1).gameObject.SetActive(false);
+                gameObject.SetActive(false);
+                if (resurrectable == false)
+                {
+                    MainScene.GameOver();
+                }
             }
         }
     }

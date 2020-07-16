@@ -128,7 +128,6 @@ public class move_control : MonoBehaviour
         {
             shift_act = false;
             enviroment_speed_coef = 1;
-            
         }
         
     }
@@ -143,6 +142,13 @@ public class move_control : MonoBehaviour
             enviroment_speed_coef = 0.5f;
             swim_mode = true;
         }
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
+            coefs.Clear();
+            coefs.Push(1);
+            enviroment_speed_coef = 1;
+            swim_mode = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -152,6 +158,10 @@ public class move_control : MonoBehaviour
         {
 
             enviroment_speed_coef = 1;
+            swim_mode = false;
+        }
+        if (collision.gameObject.CompareTag("Ladder"))
+        {
             swim_mode = false;
         }
     }

@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BlackLivesMatter.cs" />
+    <Compile Include="Assets\GameState.cs" />
     <Compile Include="Assets\Saw.cs" />
     <Compile Include="Assets\SawDamage.cs" />
     <Compile Include="Assets\Scripts\ArmActivate.cs" />
