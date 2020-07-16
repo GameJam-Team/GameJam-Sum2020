@@ -6,7 +6,7 @@ public class Saw : MonoBehaviour
 {
     private Rigidbody2D SelfBody;
     private Transform SelfTransform;
-    private Vector2 _maxVelocity = new Vector2(5f, 0);
+    public Vector2 _maxVelocity;
     private readonly float _reachDistance = 0.01f;
     private void Awake()
     {

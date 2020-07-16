@@ -54,6 +54,9 @@ TagManager:
   - name: Particles
     uniqueID: 1278695603
     locked: 0
+  - name: Lava
+    uniqueID: 145532529
+    locked: 0
   - name: PlatformsBlocksStaticObjects
     uniqueID: 1680545629
     locked: 0
