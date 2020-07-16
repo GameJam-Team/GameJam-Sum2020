@@ -10,7 +10,7 @@ public class move_control : MonoBehaviour
     public float speed, jmp_speed;
     private Vector3 shift;
     private CapsuleCollider2D height;
-    private bool down = false, jump = false, ground = true, shift_act = false, swim_mode = false;
+   public bool down = false, jump = false, ground = true, shift_act = false, swim_mode = false;
     private Rigidbody2D _selfBody;
     private Transform _selfTransform;
     private SpriteRenderer SelfSprite;
@@ -131,7 +131,16 @@ public class move_control : MonoBehaviour
         }
         
     }
-   void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Wall")&& shift_act)
+        {
+            shift_act = false;
+            enviroment_speed_coef = 1;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("earth"))
          ground = true;
@@ -146,7 +155,7 @@ public class move_control : MonoBehaviour
         {
             coefs.Clear();
             coefs.Push(1);
-            enviroment_speed_coef = 1;
+            enviroment_speed_coef = 0.55f;
             swim_mode = true;
         }
     }
@@ -162,6 +171,7 @@ public class move_control : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Ladder"))
         {
+            enviroment_speed_coef = 1;
             swim_mode = false;
         }
     }

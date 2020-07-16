@@ -96,8 +96,8 @@ BuoyancyEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 1024
-  m_SurfaceLevel: 2
-  m_Density: 0.5
+  m_SurfaceLevel: 2.45
+  m_Density: 2.403
   m_LinearDrag: 11.63
   m_AngularDrag: 11.79
   m_FlowAngle: 0
