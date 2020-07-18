@@ -8,7 +8,7 @@ public class HealthController : MonoBehaviour
     public bool immortal;
     public uint Health = 555, MaxHealth = 555;
     public float _oxigen, _energy;
-    public bool resurrectable = false;
+    public uint TotemPressed = 0;
     public Slider HealthSlider;
     public GameState MainScene;
 
@@ -30,12 +30,17 @@ public class HealthController : MonoBehaviour
             {
                 HealthSlider.transform.GetChild(1).gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                if (resurrectable == false)
+                if (TotemPressed == 0)
                 {
                     MainScene.GameOver();
                 }
             }
         }
+    }
+    public void IncreaseHealth(uint value)
+    {
+        Health += (value < MaxHealth - Health) ? value : MaxHealth - Health;
+        HealthSlider.value = (float)Health / MaxHealth * 100;
     }
     public void increaseOxigen()
     {if (_oxigen < 100) 

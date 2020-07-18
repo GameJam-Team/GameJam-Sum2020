@@ -23,7 +23,7 @@ public class ArmActivate : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         _timeUnused = 4 * Time.deltaTime;
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (Time.time - _activateTime > _timeUnused && _armActivated ||
                 Time.time - _deactivateTime > _timeUnused && !_armActivated)

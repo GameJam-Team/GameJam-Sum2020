@@ -159,6 +159,12 @@ public class move_control : MonoBehaviour
             swim_mode = true;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("earth"))
+            ground = true;
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("earth"))

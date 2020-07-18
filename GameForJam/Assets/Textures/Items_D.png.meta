@@ -47,6 +47,9 @@ TextureImporter:
   - first:
       213: 7713135748154038824
     second: Items_D_6
+  - first:
+      213: 6209298101186466629
+    second: Items_D_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -343,6 +346,27 @@ TextureImporter:
       bones: []
       spriteID: 5ea6a0293bf043280800000000000000
       internalID: -9064602886066246939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_D_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 37
+        width: 22
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5431ab989bbdb2650800000000000000
+      internalID: 6209298101186466629
       vertices: []
       indices: 
       edges: []

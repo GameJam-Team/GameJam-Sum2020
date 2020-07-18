@@ -63,20 +63,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BlackLivesMatter.cs" />
-    <Compile Include="Assets\GameState.cs" />
-    <Compile Include="Assets\Saw.cs" />
-    <Compile Include="Assets\SawDamage.cs" />
     <Compile Include="Assets\Scripts\ArmActivate.cs" />
+    <Compile Include="Assets\Scripts\BlackLivesMatter.cs" />
+    <Compile Include="Assets\Scripts\EndExplosion.cs" />
+    <Compile Include="Assets\Scripts\GameState.cs" />
     <Compile Include="Assets\Scripts\HealthController.cs" />
+    <Compile Include="Assets\Scripts\LadderLoader.cs" />
     <Compile Include="Assets\Scripts\LavaCollision.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Objects\Button.cs" />
+    <Compile Include="Assets\Scripts\Objects\Cake.cs" />
     <Compile Include="Assets\Scripts\Objects\Fire.cs" />
     <Compile Include="Assets\Scripts\Objects\InteractiveObject.cs" />
+    <Compile Include="Assets\Scripts\Objects\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Objects\Item.cs" />
+    <Compile Include="Assets\Scripts\Objects\Saw.cs" />
     <Compile Include="Assets\Scripts\Old (unused)\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PressButton.cs" />
+    <Compile Include="Assets\Scripts\SawDamage.cs" />
     <Compile Include="Assets\Scripts\SmoothCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SpikesCollision.cs" />
+    <Compile Include="Assets\Scripts\UI\ItemPresenter.cs" />
     <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\cam_control.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />

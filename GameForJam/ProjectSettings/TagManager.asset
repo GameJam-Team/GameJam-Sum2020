@@ -48,15 +48,15 @@ TagManager:
   - name: BackGround
     uniqueID: 2186658317
     locked: 0
-  - name: characters and monsters
-    uniqueID: 1707358599
-    locked: 0
   - name: Particles
     uniqueID: 1278695603
     locked: 0
-  - name: Lava
-    uniqueID: 145532529
+  - name: characters and monsters
+    uniqueID: 1707358599
     locked: 0
   - name: PlatformsBlocksStaticObjects
     uniqueID: 1680545629
+    locked: 0
+  - name: Lava
+    uniqueID: 145532529
     locked: 0
