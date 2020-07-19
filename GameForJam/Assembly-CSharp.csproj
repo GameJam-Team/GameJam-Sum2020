@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DoorOpener.cs" />
+    <Compile Include="Assets\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\ArmActivate.cs" />
     <Compile Include="Assets\Scripts\BlackLivesMatter.cs" />
     <Compile Include="Assets\Scripts\EndExplosion.cs" />
@@ -87,6 +89,8 @@
     <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\cam_control.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />
+    <Compile Include="Assets\StalactitWave.cs" />
+    <Compile Include="Assets\StalagmitDamager.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

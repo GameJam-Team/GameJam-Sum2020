@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inventory.unity
     guid: 4fc47a75dc0dfaa4aad58c2764bfa825
+  - enabled: 1
+    path: Assets/Scenes/Temp.unity
+    guid: cf42c7b7a7aed3947a7b06d723b9a6eb
   m_configObjects: {}

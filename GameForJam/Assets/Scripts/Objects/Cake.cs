@@ -11,7 +11,6 @@ public class Cake : MonoBehaviour
     {
         Particles = GetComponent<ParticleSystem>();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerHealth = collision.gameObject.GetComponent<HealthController>();
@@ -22,7 +21,7 @@ public class Cake : MonoBehaviour
         {
             Debug.Log(collision.gameObject.name);
             if (!Particles.isEmitting) Particles.Play();
-            PlayerHealth.IncreaseHealth(1);
+            if (PlayerHealth != null) PlayerHealth.IncreaseHealth(1);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
