@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ public class HealthController : MonoBehaviour
     public bool immortal;
     public uint Health = 555, MaxHealth = 555;
     public float _oxigen, _energy;
-    public uint TotemPressed = 0;
+    public GameObject TotemPressed = null;
     public Slider HealthSlider;
     public GameState MainScene;
 
@@ -30,10 +31,19 @@ public class HealthController : MonoBehaviour
             {
                 HealthSlider.transform.GetChild(1).gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                if (TotemPressed == 0)
-                {
+                if (TotemPressed == null)
                     MainScene.GameOver();
+                else
+                {
+                    if (TotemPressed.transform.parent != gameObject.transform.parent)
+                    {
+                        gameObject.transform.parent.gameObject.SetActive(false);
+                        TotemPressed.transform.parent.gameObject.SetActive(true);
+                        gameObject.transform.parent = TotemPressed.transform.parent;
+                    }
+                    TotemPressed.GetComponent<BlackLivesMatter>().Resurrect();
                 }
+                    
             }
         }
     }
@@ -52,8 +62,9 @@ public class HealthController : MonoBehaviour
         if (_oxigen <= 0.01f) decreaseHealth(1);
     }
     public void increaseEnergy()
-    {if (_energy < 100) 
-        _energy += 0.01f;
+    {
+        if (_energy < 100) 
+            _energy += 0.01f;
     }
     public bool discreaseEnergy ( float decrement)
     {

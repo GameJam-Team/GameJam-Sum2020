@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Android;
 using UnityEngine;
 
 public class BlackLivesMatter : MonoBehaviour
@@ -21,33 +22,18 @@ public class BlackLivesMatter : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (PlayerHealth.Health == 0)
-        {
-            if (!used) Resurrect();
-        }
+        if (PlayerHealth.TotemPressed != gameObject && pressed)
+            SetTothemOff();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetKeyDown(KeyCode.E))
-        {   
+        {
+            Debug.Log("Tothem pressed");
             if (!used && !pressed)
-            {
-                pressed = true;
-                PlayerHealth.TotemPressed++;
-                foreach (var torch in _torches)
-                {
-                    torch.gameObject.SetActive(true);
-                }
-            }
+                SetTothemOn();
             else if (!used) 
-            {
-                pressed = false;
-                PlayerHealth.TotemPressed--;
-                foreach (var torch in _torches)
-                {
-                    torch.gameObject.SetActive(false);
-                }
-            }
+                SetTothemOff();
             else
             {
                 Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
@@ -55,20 +41,37 @@ public class BlackLivesMatter : MonoBehaviour
             }
         }
     }
+
+    public void SetTothemOn()
+    {
+        pressed = true;
+        PlayerHealth.TotemPressed = gameObject;
+        foreach (var torch in _torches)
+        {
+            torch.gameObject.SetActive(true);
+        }
+    }
+
+    public void SetTothemOff()
+    {
+        pressed = false;
+        if (PlayerHealth.TotemPressed == gameObject)
+            PlayerHealth.TotemPressed = null;
+        foreach (var torch in _torches)
+        {
+            torch.gameObject.SetActive(false);
+        }
+    }
     public void Resurrect()
     {
         if (!used && pressed)
         {
+            SetTothemOff();
             PlayerTransform.position = transform.position;
             used = true;
             PlayerTransform.gameObject.SetActive(true);
             PlayerHealth.Health = PlayerHealth.MaxHealth;
-            foreach (var torch in _torches)
-            {
-                torch.gameObject.SetActive(false);
-            }
             PlayerHealth.HealthSlider.transform.GetChild(1).gameObject.SetActive(true);
-            PlayerHealth.TotemPressed --;
             PlayerHealth.HealthSlider.value = (float)PlayerHealth.Health / PlayerHealth.MaxHealth * 100;
         }
     }
