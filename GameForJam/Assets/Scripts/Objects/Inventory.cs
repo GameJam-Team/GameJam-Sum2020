@@ -8,11 +8,12 @@ public class Inventory : MonoBehaviour
     public GameObject CellPrefab;
     private void Start()
     {
-        var rt = GetComponent<RectTransform>();
-        foreach (var item in PickedItems)
+        RectTransform rt = GetComponent<RectTransform>();
+        RectTransform rtParent = rt.parent.GetComponent<RectTransform>();
+        foreach (Item item in PickedItems)
         {
-            var gObj = Instantiate(CellPrefab, transform);
-            gObj.GetComponent<ItemPresenter>().Present(item, rt, rt.parent.GetComponent<RectTransform>());
+            GameObject gObj = Instantiate(CellPrefab, transform);
+            gObj.GetComponent<ItemPresenter>().Present(item, rt, rtParent);
         }
     }
 }

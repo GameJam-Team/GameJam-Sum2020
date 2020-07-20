@@ -11,28 +11,28 @@ public class ItemPresenter : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     private Transform _transform;
     private RectTransform _holdParent;
     private RectTransform _dragParent;
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+    }
     public void OnBeginDrag(PointerEventData eventData)
     {
         _transform.SetParent(_dragParent.transform);
     }
-
     public void OnDrag(PointerEventData eventData)
     {
         _transform.position = Input.mousePosition;
     }
-
     public void OnEndDrag(PointerEventData eventData)
     {
         _transform.SetParent(_holdParent.transform);
-
         if (!RectTransformUtility.RectangleContainsScreenPoint(_holdParent, Input.mousePosition))
         {
-
-            Instantiate(_currentItem.View, Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,10), Quaternion.identity);
+            Vector3 itemPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0, 0, 10);
+            Instantiate(_currentItem.View, itemPos, Quaternion.identity);
             Destroy(gameObject);
         }
     }
-
     public void Present(Item item, RectTransform holdParent, RectTransform dragParent)
     {
         Icon.sprite = item.Icon;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cake : MonoBehaviour
 {
     private ParticleSystem Particles;
-    private HealthController PlayerHealth = null;
+    private HealthController PlayerHealthController = null;
 
     private void Awake()
     {
@@ -13,7 +13,7 @@ public class Cake : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerHealth = collision.gameObject.GetComponent<HealthController>();
+        PlayerHealthController = collision.gameObject.GetComponent<HealthController>();
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -21,11 +21,11 @@ public class Cake : MonoBehaviour
         {
             Debug.Log(collision.gameObject.name);
             if (!Particles.isEmitting) Particles.Play();
-            if (PlayerHealth != null) PlayerHealth.IncreaseHealth(1);
+            if (PlayerHealthController != null) PlayerHealthController.IncreaseHealth(1);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerHealth = null;
+        PlayerHealthController = null;
     }
 }

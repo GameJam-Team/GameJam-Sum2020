@@ -7,7 +7,7 @@ public class Button : InteractiveObject
     private Animator _animator;
     private void Awake()
     {
-        _animator = GetComponent<Animator>();
+        _animator = transform.GetChild(0).GetComponent<Animator>();
     }
     public override void ButtonInteraction()
     {

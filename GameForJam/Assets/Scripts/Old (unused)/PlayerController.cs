@@ -7,13 +7,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D SelfBody;
     [SerializeField][Range(1,100)] private float JumpForce = 0, MoveSpeed = 0;
     private SpriteRenderer SelfSprite;
-
     private void Awake()
     {
         SelfBody = GetComponent<Rigidbody2D>();
         SelfSprite = GetComponent<SpriteRenderer>();
     }
-
     private void Update()
     {
         Vector2 velocity = SelfBody.velocity;
@@ -28,9 +26,7 @@ public class PlayerController : MonoBehaviour
             SelfSprite.flipX = true;
         }
         if (Input.GetKeyDown(KeyCode.Space))
-        {
             velocity.y = JumpForce;
-        }
         SelfBody.velocity = velocity;
     }
 }

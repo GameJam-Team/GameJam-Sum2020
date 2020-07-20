@@ -9,8 +9,10 @@ public class GameState : MonoBehaviour
     public Canvas canvas;
     private GameObject GameOverTextObj;
     private GameObject RestartButton;
+    [SerializeField] private string _startSceneName;
     private void Awake()
     {
+        _startSceneName = SceneManager.GetActiveScene().name;
         GameOverTextObj = canvas.transform.GetChild(1).gameObject;
         RestartButton = canvas.transform.GetChild(2).gameObject;
     }
@@ -21,7 +23,7 @@ public class GameState : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene("Timur");
+        SceneManager.LoadScene(_startSceneName);
         SceneManager.LoadScene("inventory", LoadSceneMode.Additive);
     }
 }

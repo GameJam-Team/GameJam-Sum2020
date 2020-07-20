@@ -115,10 +115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57403587db859648ac8429332237a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   PlayerHealth: {fileID: 0}
   PlayerTransform: {fileID: 0}
-  Explosion: {fileID: 1413155045782824239, guid: c4feb09aad1137e43b6068d7bf7deece,
+  ExplosionPrefab: {fileID: 1413155045782824239, guid: c4feb09aad1137e43b6068d7bf7deece,
     type: 3}
+  pressed: 0
+  used: 0
 --- !u!1001 &3679678955543157693
 PrefabInstance:
   m_ObjectHideFlags: 0

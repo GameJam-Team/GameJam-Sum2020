@@ -5,19 +5,25 @@ using UnityEngine;
 
 public class BlackLivesMatter : MonoBehaviour
 {
+    public GameObject Player;
     public HealthController PlayerHealth;
     public Transform PlayerTransform;
-    public GameObject Explosion;
-    private Transform[] _torches;
+    public GameObject ExplosionPrefab;
+    private GameObject[] _torches;
     private Transform SelfTransform;
-    private bool pressed = false, used = false;
+    private float _activateTime;
+    private float _deactivateTime;
+    private float _timeUnused;
+    [SerializeField] private bool pressed = false, used = false;
     private void Awake()
     {
+        PlayerHealth = Player.GetComponent<HealthController>();
+        PlayerTransform = Player.GetComponent<Transform>();
         SelfTransform = GetComponent<Transform>();
-        _torches = new  Transform[] 
-        {SelfTransform.GetChild(0),
-         SelfTransform.GetChild(1),
-         SelfTransform.GetChild(2)
+        _torches = new GameObject[] 
+        {SelfTransform.GetChild(0).gameObject,
+         SelfTransform.GetChild(1).gameObject,
+         SelfTransform.GetChild(2).gameObject
         };
     }
     private void FixedUpdate()
@@ -27,28 +33,38 @@ public class BlackLivesMatter : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        _timeUnused = 4 * Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Tothem pressed");
-            if (!used && !pressed)
-                SetTothemOn();
-            else if (!used) 
-                SetTothemOff();
-            else
+            if (Time.time - _activateTime > _timeUnused && pressed ||
+                Time.time - _deactivateTime > _timeUnused && !pressed)
             {
-                Instantiate(Explosion, gameObject.transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                Debug.Log("Tothem pressed");
+                if (!used && !pressed)
+                {
+                    SetTothemOn();
+                    _activateTime = Time.time;
+                }
+                else if (!used)
+                {
+                    SetTothemOff();
+                    _deactivateTime = Time.time;
+                }
+                else
+                {
+                    Instantiate(ExplosionPrefab, SelfTransform.position, Quaternion.identity);
+                    Destroy(gameObject);
+                }
             }
         }
     }
-
     public void SetTothemOn()
     {
         pressed = true;
         PlayerHealth.TotemPressed = gameObject;
-        foreach (var torch in _torches)
+        foreach (GameObject torch in _torches)
         {
-            torch.gameObject.SetActive(true);
+            torch.SetActive(true);
         }
     }
 
@@ -57,9 +73,9 @@ public class BlackLivesMatter : MonoBehaviour
         pressed = false;
         if (PlayerHealth.TotemPressed == gameObject)
             PlayerHealth.TotemPressed = null;
-        foreach (var torch in _torches)
+        foreach (GameObject torch in _torches)
         {
-            torch.gameObject.SetActive(false);
+            torch.SetActive(false);
         }
     }
     public void Resurrect()
@@ -67,12 +83,11 @@ public class BlackLivesMatter : MonoBehaviour
         if (!used && pressed)
         {
             SetTothemOff();
-            PlayerTransform.position = transform.position;
+            PlayerTransform.position = SelfTransform.position;
             used = true;
-            PlayerTransform.gameObject.SetActive(true);
-            PlayerHealth.Health = PlayerHealth.MaxHealth;
+            Player.SetActive(true);
+            PlayerHealth.IncreaseHealth(PlayerHealth.MaxHealth);
             PlayerHealth.HealthSlider.transform.GetChild(1).gameObject.SetActive(true);
-            PlayerHealth.HealthSlider.value = (float)PlayerHealth.Health / PlayerHealth.MaxHealth * 100;
         }
     }
 }

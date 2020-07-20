@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class EndExplosion : MonoBehaviour
 {
+    [SerializeField] private float _explosionTime = 0.35f;
+    [SerializeField] private uint _explosionDamage = 10;
     void Start()
     {
-        Invoke("DelayedDestory", 0.35f);
+        Invoke("DelayedDestroy", _explosionTime);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.GetComponent<HealthController>().decreaseHealth(10);
+        HealthController HPController = collision.gameObject.GetComponent<HealthController>();
+        if (HPController != null) HPController.decreaseHealth(_explosionDamage);
     }
-    void DelayedDestory()
+    void DelayedDestroy()
     {
         Destroy(gameObject);
     }

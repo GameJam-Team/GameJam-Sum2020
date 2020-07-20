@@ -7,17 +7,14 @@ using UnityEngine.Rendering;
 public class ArmActivate : MonoBehaviour
 {
     public InteractiveObject Object;
-    //private Animator _animator;
     private Transform SelfTransform;
     private bool _armActivated = false;
     private float _activateTime;
     private float _deactivateTime;
     private float _timeUnused;
-    private Vector3 _eulers = new Vector3(0, 0, 60.37f);
+    [SerializeField] private Vector3 _eulers = new Vector3(0, 0, 60.37f);
     private void Awake()
     {
-        //_animator = GetComponent<Animator>();
-        _armActivated = false;
         SelfTransform = transform.GetChild(0);
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -43,20 +40,6 @@ public class ArmActivate : MonoBehaviour
                     _deactivateTime = Time.time;
                 }
             }
-            
-            /*
-            if (_armActivated == false)
-            {
-                _animator.Play("ArmActivation");
-                
-                _armActivated = true;
-            }
-            if (_armActivated == true)
-            {
-                _animator.Play("ArmDeactivation");
-                _armActivated = false;
-            }
-            */
         }
     }
 }

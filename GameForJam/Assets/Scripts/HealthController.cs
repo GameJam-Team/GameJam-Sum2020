@@ -7,15 +7,19 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     public bool immortal;
-    public uint Health = 555, MaxHealth = 555;
+    [SerializeField] private uint Health = 100;
+    public uint MaxHealth = 100;
     public float _oxigen, _energy;
     public GameObject TotemPressed = null;
     public Slider HealthSlider;
     public GameState MainScene;
-
+    private Transform _playerTransform;
+    private GameObject _curSceneObject;
     private ParticleSystem _particleSystem;
     private void Awake()
     {
+        _playerTransform = GetComponent<Transform>();
+        _curSceneObject = _playerTransform.parent.gameObject;
         immortal = false;
         HealthSlider.value = 100;
         _particleSystem = GetComponent<ParticleSystem>();
@@ -37,13 +41,13 @@ public class HealthController : MonoBehaviour
                 {
                     if (TotemPressed.transform.parent != gameObject.transform.parent)
                     {
-                        gameObject.transform.parent.gameObject.SetActive(false);
-                        TotemPressed.transform.parent.gameObject.SetActive(true);
-                        gameObject.transform.parent = TotemPressed.transform.parent;
+                        _curSceneObject.SetActive(false);
+                        Transform newSceneTransform = TotemPressed.transform.parent;
+                        newSceneTransform.gameObject.SetActive(true);
+                        _playerTransform.parent = newSceneTransform;
                     }
                     TotemPressed.GetComponent<BlackLivesMatter>().Resurrect();
                 }
-                    
             }
         }
     }

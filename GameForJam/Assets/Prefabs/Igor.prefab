@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1355532756052592789}
   - component: {fileID: 7016000483091215391}
   - component: {fileID: 3941652022634694274}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Nouse
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da298ae7a4e46a643924267e9b171788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  air: 1
 --- !u!1 &5146444918455467192
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,7 +147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1707358599
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6646e5508f07ed04899f43426995ec7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -210,6 +211,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shft_distanse: 4.2
   cd_shft_time: 2
+  x: 0
+  y: 0
+  tall: 0
+  enviroment_speed_coef: 1
+  shft_cd: 0
   speed: 6
   jmp_speed: 50
   down: 0
@@ -260,7 +266,7 @@ MonoBehaviour:
   MaxHealth: 100
   _oxigen: 100
   _energy: 100
-  resurrectable: 0
+  TotemPressed: {fileID: 0}
   HealthSlider: {fileID: 0}
   MainScene: {fileID: 0}
 --- !u!198 &1791210079782945979
@@ -4960,7 +4966,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1278695603
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_RenderMode: 0
   m_SortMode: 0

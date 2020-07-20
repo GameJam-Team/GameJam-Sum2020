@@ -5,7 +5,7 @@ using UnityEngine;
 public class SmoothCameraFollow : MonoBehaviour
 {
     public Transform Player;
-    public float dampTime = 0.4f;
+    [SerializeField] private float dampTime = 0.4f;
     private Vector3 cameraPos;
     private Vector3 velocity = Vector3.zero;
     private Transform _camTransform;
