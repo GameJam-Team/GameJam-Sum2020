@@ -61,7 +61,15 @@ public class move_control : MonoBehaviour
     private void FixedUpdate()
     {
         x = Input.GetAxis("Horizontal");
-        SelfSprite.flipX = Mathf.Sign(x) < 0;
+        //SelfSprite.flipX = Mathf.Sign(x) < 0;
+        if (Mathf.Sign(x) < 0)
+        {
+            _selfTransform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else
+        {
+            _selfTransform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
         if (x > 0) x = 1f;
         if (x < 0) x = -1f;
         if (Input.GetKey(KeyCode.LeftShift) && !shift_act && Mathf.Abs(x) > 0 && shft_cd <= 0 && HPController.discreaseEnergy(5)) 

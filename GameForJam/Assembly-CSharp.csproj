@@ -72,7 +72,7 @@
     <Compile Include="Assets\Scripts\LadderLoader.cs" />
     <Compile Include="Assets\Scripts\LavaCollision.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\Objects\Button.cs" />
+    <Compile Include="Assets\Scripts\Objects\ButtonInteractive.cs" />
     <Compile Include="Assets\Scripts\Objects\Cake.cs" />
     <Compile Include="Assets\Scripts\Objects\Fire.cs" />
     <Compile Include="Assets\Scripts\Objects\InteractiveObject.cs" />
@@ -90,7 +90,8 @@
     <Compile Include="Assets\Scripts\UI\ItemPresenter.cs" />
     <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />
-    <None Include="Assets\MusicAssets\CasualGameBGM05\ReadMe.txt" />
+    <Compile Include="Assets\Zero Rare\Retro Sound Effects\Demo\Demo.cs" />
+    <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

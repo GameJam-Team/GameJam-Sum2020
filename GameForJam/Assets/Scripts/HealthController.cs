@@ -16,6 +16,7 @@ public class HealthController : MonoBehaviour
     private Transform _playerTransform;
     private GameObject _curSceneObject;
     private ParticleSystem _particleSystem;
+    public GameObject deathBody;
     private void Awake()
     {
         _playerTransform = GetComponent<Transform>();
@@ -35,12 +36,15 @@ public class HealthController : MonoBehaviour
             {
                 HealthSlider.transform.GetChild(1).gameObject.SetActive(false);
                 gameObject.SetActive(false);
+                Instantiate(deathBody, transform.position, Quaternion.Euler(new Vector3(0, 0, -5f)));
                 if (TotemPressed == null)
                     MainScene.GameOver();
                 else
                 {
+                    
                     if (TotemPressed.transform.parent != gameObject.transform.parent)
                     {
+                        _curSceneObject = _playerTransform.parent.gameObject;
                         _curSceneObject.SetActive(false);
                         Transform newSceneTransform = TotemPressed.transform.parent;
                         newSceneTransform.gameObject.SetActive(true);
