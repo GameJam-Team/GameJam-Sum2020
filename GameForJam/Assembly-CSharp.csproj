@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DeathBodyScript.cs" />
+    <Compile Include="Assets\HelpLightScript.cs" />
+    <Compile Include="Assets\LavaLoader.cs" />
     <Compile Include="Assets\Scripts\ArmActivate.cs" />
     <Compile Include="Assets\Scripts\BlackLivesMatter.cs" />
     <Compile Include="Assets\Scripts\DoorOpener.cs" />
@@ -90,8 +93,6 @@
     <Compile Include="Assets\Scripts\UI\ItemPresenter.cs" />
     <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />
-    <Compile Include="Assets\Zero Rare\Retro Sound Effects\Demo\Demo.cs" />
-    <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

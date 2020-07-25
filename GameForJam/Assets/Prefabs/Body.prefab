@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 750609766872793325}
   - component: {fileID: 750609766872793324}
   - component: {fileID: 750609766872793331}
+  - component: {fileID: 4675444707482392202}
   m_Layer: 8
   m_Name: Body
   m_TagString: earth
@@ -120,3 +121,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.45, y: 1.12}
   m_Direction: 0
+--- !u!114 &4675444707482392202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750609766872793330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02e6b1654ce98847a6085ab4a62faeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

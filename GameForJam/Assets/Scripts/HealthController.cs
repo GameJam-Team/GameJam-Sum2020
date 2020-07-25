@@ -36,13 +36,12 @@ public class HealthController : MonoBehaviour
             {
                 HealthSlider.transform.GetChild(1).gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                Instantiate(deathBody, transform.position, Quaternion.Euler(new Vector3(0, 0, -5f)));
+                Instantiate(deathBody, transform.position, Quaternion.Euler(new Vector3(0, 0, -5f)), transform.parent);
                 if (TotemPressed == null)
                     MainScene.GameOver();
                 else
                 {
-                    
-                    if (TotemPressed.transform.parent != gameObject.transform.parent)
+                    if (TotemPressed.transform.parent != transform.parent)
                     {
                         _curSceneObject = _playerTransform.parent.gameObject;
                         _curSceneObject.SetActive(false);
@@ -55,10 +54,12 @@ public class HealthController : MonoBehaviour
             }
         }
     }
-    public void IncreaseHealth(uint value)
+    public uint IncreaseHealth(uint value)
     {
-        Health += (value < MaxHealth - Health) ? value : MaxHealth - Health;
+        uint dHealth = (value < MaxHealth - Health) ? value : MaxHealth - Health;
+        Health += dHealth;
         HealthSlider.value = (float)Health / MaxHealth * 100;
+        return dHealth;
     }
     public void increaseOxigen()
     {if (_oxigen < 100) 
