@@ -63,9 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AxeDamager.cs" />
     <Compile Include="Assets\DeathBodyScript.cs" />
+    <Compile Include="Assets\Enemy.cs" />
     <Compile Include="Assets\HelpLightScript.cs" />
     <Compile Include="Assets\LavaLoader.cs" />
+    <Compile Include="Assets\LoadLevel.cs" />
+    <Compile Include="Assets\PauseEsc.cs" />
+    <Compile Include="Assets\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\ArmActivate.cs" />
     <Compile Include="Assets\Scripts\BlackLivesMatter.cs" />
     <Compile Include="Assets\Scripts\DoorOpener.cs" />
@@ -93,6 +98,7 @@
     <Compile Include="Assets\Scripts\UI\ItemPresenter.cs" />
     <Compile Include="Assets\Scripts\breath.cs" />
     <Compile Include="Assets\Scripts\move_control.cs" />
+    <Compile Include="Assets\WinPlatform.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

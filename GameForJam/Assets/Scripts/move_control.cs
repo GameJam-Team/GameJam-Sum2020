@@ -7,7 +7,7 @@ public class move_control : MonoBehaviour
     [SerializeField] private float shft_distanse = 13;
     [SerializeField] private float cd_shft_time = 2;
     [SerializeField] private float x,y, tall, enviroment_speed_coef = 1, shft_cd;
-    [SerializeField] private float speed, jmp_speed;
+    [SerializeField] private float speed = 0, jmp_speed = 0;
     private Vector3 shift;
     private CapsuleCollider2D height;
     [SerializeField] private bool down = false, jump = false, ground = true, shift_act = false, swim_mode = false;

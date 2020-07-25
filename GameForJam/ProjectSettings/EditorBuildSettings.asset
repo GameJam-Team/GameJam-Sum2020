@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 3d6479d5db9627b40badbf4db6c83499
   - enabled: 1
+    path: Assets/Scenes/Control.unity
+    guid: 3ca5c0a653f1ae84681ed3d82c958bfa
+  - enabled: 1
     path: Assets/Scenes/Timur.unity
     guid: 5fa997b96949e664aa20f854a89e8144
   - enabled: 1
     path: Assets/Scenes/Inventory.unity
     guid: 4fc47a75dc0dfaa4aad58c2764bfa825
   - enabled: 1
-    path: Assets/Scenes/Temp.unity
-    guid: cf42c7b7a7aed3947a7b06d723b9a6eb
+    path: Assets/Scenes/Fight.unity
+    guid: f1dfbc265285455479b528ab1bff235c
   m_configObjects: {}

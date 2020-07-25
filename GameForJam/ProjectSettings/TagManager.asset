@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - water
   - Ladder
+  - Nouse
   layers:
   - Default
   - TransparentFX
@@ -22,8 +23,8 @@ TagManager:
   - Player
   - Lava
   - Door
-  - 
-  - 
+  - Axe
+  - Enemy
   - 
   - 
   - 

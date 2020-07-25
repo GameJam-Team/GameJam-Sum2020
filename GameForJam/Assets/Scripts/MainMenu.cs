@@ -13,6 +13,6 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(_startSceneName, LoadSceneMode.Single);
-        SceneManager.LoadScene("inventory", LoadSceneMode.Additive);
+        if (_startSceneName != "Control") SceneManager.LoadScene("inventory", LoadSceneMode.Additive);
     }
 }

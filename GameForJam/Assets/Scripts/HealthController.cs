@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
     public bool immortal;
-    [SerializeField] private uint Health = 100;
+    public uint Health = 100;
     public uint MaxHealth = 100;
     public float _oxigen, _energy;
     public GameObject TotemPressed = null;
